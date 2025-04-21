@@ -1,0 +1,11 @@
+version: '3'
+services:
+  spip-test:
+    image: ipeos/spip:latest
+    ports:
+      - "8080:80"
+    volumes:
+      - ./squelettes:/var/www/html/squelettes
+      - ./mes_fonctions.php:/var/www/html/mes_fonctions.php
+    environment:
+      - SPIP_DB_SERVER=sqlite3
